@@ -1,7 +1,11 @@
 # S206-Lista-1
 Repositório da primeira lista do laboratório de S206
+<br>
+<br>
 
 # Testes do site https://confianopai.com/
+<br>
+<br>
 
 # Alunos
 
@@ -11,6 +15,8 @@ const uuid = () => Cypress._.random(0, 1e6)
 const id = uuid()
 const testname = `testname${id}`
 ```
+<br>
+<br>
 
 1º Teste: Teste de criar usuário com sucesso
 Esse teste verifica se é possível criar um usuário (aluno)
@@ -29,6 +35,8 @@ it('Teste de criar usuário com sucesso', () => {
     cy.get('.Toastify__toast-body > :nth-child(2)').should("contain.text", "Usuário criado com sucesso!")
   })
 ```
+<br>
+<br>
 
 2º Teste: Teste de criar usuário com mesmo email
 Esse teste verifica se é possível criar um usuário com o mesmo email já utilizado na criação de outro usuário
@@ -48,6 +56,8 @@ it('Teste de criar usuário com mesmo email', () => {
   })
 ```
 
+<br>
+<br>
 
 3º Teste: Teste de criar usuário com email invalido
 Esse teste verifica se é possível criar um usuário (aluno) com um email não existente
@@ -67,6 +77,8 @@ it('Teste de criar usuário com email invalido', () => {
   })
 ```
 
+<br>
+<br>
 
 4º Teste: Teste de tentativa de login de um novo usuário
 Esse teste verifica se é possível fazer o login 
@@ -81,6 +93,8 @@ it('Teste de tentativa de login de um novo usuário', () => {
   })
 ```
 
+<br>
+<br>
 
 5º Teste: Teste de tentativa de login de um novo usuário com senha errada
 Esse teste verifica se é possível um usuário fazer login utilizando uma senha incorreta
@@ -94,6 +108,8 @@ it('Teste de tentativa de login de um novo usuário com senha errada', () => {
   })
 ```
 
+<br>
+<br>
 
 6º Teste: Nome de usuário não é case sensetive (não difere letras maiusculas e minusculas)
 Esse teste verifica se o site faz diferença entre letras maiusculas e minusculas no login de um usuário
@@ -107,3 +123,10 @@ it('Nome de usuário não é case sensetive (não difere letras maiusculas e min
     cy.url().should('eq', 'https://confianopai.com/login')
   })
 ```
+
+<br>
+<br>
+
+Relatório mochawesme dos teste dos alunos:
+![Screenshot_2](https://github.com/user-attachments/assets/d6245059-a9a2-4f25-afb2-0d1c7f744bd8)
+
