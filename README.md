@@ -3,8 +3,6 @@ Repositório da primeira lista do laboratório de S206
 
 # Testes do site https://confianopai.com/
 
-
-
 # Alunos
 
 Variáveis auxiliares utilizadas
