@@ -57,3 +57,13 @@ describe('Teste de criar uma nova fase', ()=>{
         cy.get('.btn-primary').click()
 
     })
+
+   it('Teste para remover uma fase', () => {
+        cy.visit('https://confianopai.com/login')
+        cy.get(':nth-child(2) > .sc-ktwOfi').type("matheusb@")
+        cy.get(':nth-child(3) > .sc-ktwOfi').type("123")
+        cy.get('.sc-csKJxZ').click()
+        cy.get('[href="/adm/fases"]').click()
+        cy.get(':nth-child(1) > .sc-kjKYmT > [style="display: flex; align-items: center; gap: 25px;"] > .sc-grhZJe').click()
+        cy.get('.sc-IYqbYc > path').click()
+    })
