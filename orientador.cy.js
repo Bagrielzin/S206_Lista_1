@@ -62,7 +62,8 @@ describe('Testes de criação de usuário', () => {
     cy.get('input[name="email"]').should('not.exist')
     cy.get('input[name="senha"]').should('not.exist')
     cy.get('button[type="submit"]').should('not.exist')
-    cy.url().should('eq', 'https://confianopai.com/adm/novo-usuario')
+    cy.get(':nth-child(4) > .sc-irLvIq > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body > :nth-child(2)').should("contain.text", "Falha ao criar usuário.")
 
   })
 })
