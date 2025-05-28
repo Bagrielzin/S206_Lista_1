@@ -396,6 +396,7 @@ it('Teste de uma fase com entregas = 0', () => {
 <br>
 
 Relatório mochawesme dos teste dos alunos:
-![7f1b029c-3693-4db7-9145-63768f29b3ba](https://github.com/user-attachments/assets/c9ac5af1-cab2-4719-b80b-68dad45ab6c1)
+![image](https://github.com/user-attachments/assets/a1bfc9b8-3f26-458a-904d-3d603b0591bd)
+
 
 
