@@ -1,0 +1,97 @@
+describe('adicionando membro', () => {
+  it('passes', () => {
+    cy.visit('https://confianopai.com/login')
+    cy.get(':nth-child(2) > .sc-ktwOfi').type('matheusb@')
+    cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
+    cy.get('.sc-csKJxZ').click()
+    cy.get('.sc-ckdEwu').click()
+    cy.get('.sc-ckdEwu').type('projeto x')
+    cy.get('.sc-gjLLEI').click()
+    cy.get('.sc-cPtzlb > .sc-irLvIq > .sc-csKJxZ').click()
+    cy.get('.sc-ppzwM').type('ppppp@gmail.com')
+    cy.get('.sc-hiTDLB').click()
+    cy.get('.sc-cSxRuM > :nth-child(5) > :nth-child(3)').should("contain.text","Integrante 3")
+  })
+})
+
+describe('excluindo membro', () => {
+  it('passes', () => {
+    cy.visit('https://confianopai.com/login')
+    cy.get(':nth-child(2) > .sc-ktwOfi').type('matheusb@')
+    cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
+    cy.get('.sc-csKJxZ').click()
+    cy.get('.sc-ckdEwu').click()
+    cy.get('.sc-ckdEwu').type('projeto x')
+    cy.get('.sc-gjLLEI').click()
+    cy.get('.sc-cPtzlb > .sc-irLvIq > .sc-csKJxZ').click()
+    cy.get('.sc-ppzwM').type('ppppp@gmail.com')
+    cy.get('.sc-hiTDLB').click()
+    cy.get(':nth-child(5) > .sc-jiaSqj > .sc-hVcFVo').click()
+    cy.get('.sc-bbxCgr > :nth-child(1)').click()
+    cy.get('.sc-cSxRuM > :nth-child(5) > :nth-child(2)').should('not.exist')
+  })
+})
+
+describe('criando projeto', () => {
+  it('passes', () => {
+    cy.visit('https://confianopai.com/login')
+    cy.get(':nth-child(2) > .sc-ktwOfi').type('matheusb@')
+    cy.get(':nth-child(3) > .sc-ktwOfi').type('123')
+    cy.get('.sc-csKJxZ').click()
+    cy.get('.sc-jdHILj').click()
+    cy.get('[href="/adm/add-projeto/cadastro"]').click()
+    cy.get('.sc-fYrVWQ > .sc-hsaIUA').type('Projeto teste')
+    cy.get(':nth-child(2) > :nth-child(2) > .sc-hsaIUA').type('anna.clara@ges.inatel.br')
+    cy.get(':nth-child(3) > :nth-child(2) > .sc-hsaIUA').type('gabiru@inatel.br')
+    cy.get(':nth-child(6) > :nth-child(2) > .sc-hsaIUA').type('felipeb@inatel.br')
+    cy.get(':nth-child(1) > .sc-bZTyFN > .sc-hlqirL').select('Com pendência')
+    cy.get(':nth-child(2) > .sc-bZTyFN > .sc-hlqirL').select('Projeto Internacional')
+    cy.get('.sc-eGgGjL > :nth-child(1)').click()
+    cy.get('.Toastify__toast-body > :nth-child(2)').should("contain.text","Equipe criada com sucesso!")
+  })
+})
+
+describe('Teste de uma fase', ()=>{
+    it('Teste de uma fase com sucesso', () => {
+        cy.visit('https://confianopai.com/login')
+        cy.get(':nth-child(2) > .sc-ktwOfi').type("matheusb@")
+        cy.get(':nth-child(3) > .sc-ktwOfi').type("123")
+        cy.get('.sc-csKJxZ').click()
+        cy.get('[href="/adm/fases"]').click()
+        cy.get('.sc-ia-dotI').click()
+        cy.get(':nth-child(1) > .sc-jnbAOD').type('Final')
+        cy.get(':nth-child(2) > .sc-jnbAOD').type('2025-06-09')
+        cy.get(':nth-child(3) > .sc-jnbAOD').type('6')
+        cy.get('.btn-primary').click()
+
+    })
+
+    it('Teste de uma fase com mesmo nome', () => {
+        cy.visit('https://confianopai.com/login')
+        cy.get(':nth-child(2) > .sc-ktwOfi').type("matheusb@")
+        cy.get(':nth-child(3) > .sc-ktwOfi').type("123")
+        cy.get('.sc-csKJxZ').click()
+        cy.get('[href="/adm/fases"]').click()
+        cy.get('.sc-ia-dotI').click()
+        cy.get(':nth-child(1) > .sc-jnbAOD').type('Final')
+        cy.get(':nth-child(2) > .sc-jnbAOD').type('2025-09-09')
+        cy.get(':nth-child(3) > .sc-jnbAOD').type('2')
+        cy.get('.btn-primary').click()
+
+    })
+
+    it('Teste de uma fase com entregas = 0', () => {
+        cy.visit('https://confianopai.com/login')
+        cy.get(':nth-child(2) > .sc-ktwOfi').type("matheusb@")
+        cy.get(':nth-child(3) > .sc-ktwOfi').type("123")
+        cy.get('.sc-csKJxZ').click()
+        cy.get('[href="/adm/fases"]').click()
+        cy.get('.sc-ia-dotI').click()
+        cy.get(':nth-child(1) > .sc-jnbAOD').type('Final')
+        cy.get(':nth-child(2) > .sc-jnbAOD').type('2025-07-07')
+        cy.get(':nth-child(3) > .sc-jnbAOD').type('0')
+        cy.get('.btn-primary').click()
+
+    })
+})
+
